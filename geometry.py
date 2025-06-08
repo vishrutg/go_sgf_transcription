@@ -112,7 +112,7 @@ class Lines2D:
     @staticmethod
     def combine(obj1, obj2):
         # combine two Lines2D objects
-        return Lines2D(np.concat([obj1.lines, obj2.lines]))
+        return Lines2D(np.concatenate([obj1.lines, obj2.lines]))
 
     @staticmethod
     def get_intersect(a1, a2, b1, b2):
@@ -134,17 +134,17 @@ class Lines2D:
 
     @property
     def lines(self):
-        return np.concat([self.x1, self.y1, self.x2, self.y2], axis=1)
+        return np.concatenate([self.x1, self.y1, self.x2, self.y2], axis=1)
 
     @property
     def pt1(self):
         # first point in the line segment
-        return np.concat([self.x1, self.y1], axis=1)
+        return np.concatenate([self.x1, self.y1], axis=1)
 
     @property
     def pt2(self):
         # second point in the line segment
-        return np.concat([self.x2, self.y2], axis=1)
+        return np.concatenate([self.x2, self.y2], axis=1)
 
     @property
     def line_angle(self):
@@ -189,7 +189,7 @@ class Lines2D:
         # output is a new set of Lines2D object
         transformed_pts1 = self.pt1 @ np.transpose(transform_matrix) + translation
         transformed_pts2 = self.pt2 @ np.transpose(transform_matrix) + translation
-        return Lines2D(np.concat([transformed_pts1, transformed_pts2], axis=1))
+        return Lines2D(np.concatenate([transformed_pts1, transformed_pts2], axis=1))
 
     def build_line_matching_image(self, img_width, img_height, thickness=None):
         # create a new image for visualizing the lines

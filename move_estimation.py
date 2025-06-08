@@ -933,7 +933,7 @@ if __name__ == '__main__':
     import lattice_estimation
     import board_estimation
     parser = argparse.ArgumentParser(description='')
-    parser.add_argument('video_path', type=str)
+    parser.add_argument('--video_path', type=str, required=True)
     parser.add_argument('--board_size', type=int, default=19)
     args = parser.parse_args()
 

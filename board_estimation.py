@@ -1097,9 +1097,9 @@ if __name__ == "__main__":
 
     parser = argparse.ArgumentParser(description="")
     subparsers = parser.add_subparsers(help="train or inference mode")
-    parser.add_argument("--video_path", type=str)
-    parser.add_argument("--board_estimation_parameters_path", type=str)
-    parser.add_argument("--lattice_estimation_parameters_path", type=str)
+    parser.add_argument("--video_path", type=str, required=True)
+    parser.add_argument("--board_estimation_parameters_path", type=str, required=True)
+    parser.add_argument("--lattice_estimation_parameters_path", type=str, required=True)
     parser.add_argument("--board_size", type=int, default=19)
     parser.add_argument("--train_board_estimation", action="store_true", default=False)
     parser.add_argument("--debug", action="store_true", default=False)
